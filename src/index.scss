@@ -5,9 +5,51 @@ body {
 .topbar {
     height: 100px;
     width: 100%;
-    outline: thin dashed red;
-}
 
-.topbar .logo {
-    height: 100px;
+    .logo {
+        margin-top:-40px;
+        height: 200px;
+        display: inline-block;
+    }
+
+    .menu {
+        padding-top: 30px;
+        padding-right: 50px;
+        float: right;
+        display: inline-block;
+        color: #FFF;
+        font-size: 45px;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            margin-left: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+
+            transition: color 1500ms;
+
+            &:hover{
+                color: #fbb904;
+            }
+        }
+    }
+
+    .social-media {
+       padding-top: 25px;
+        padding-right: 50px;
+        float: right;
+        display: inline-block;
+
+        li {
+            display: inline-block;
+            list-style: none;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            img {
+                height: 50px;
+            }
+        }
+    }
 }
