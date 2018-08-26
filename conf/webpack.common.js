@@ -62,6 +62,16 @@ module.exports = {
             // use style-loader in development
             fallback: "style-loader"
         })
+    },
+    { 
+        test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, 
+        loader: "file-loader",
+        options: {
+            name: '[name].[ext]',
+            useRelativePath: true,
+            outputPath: "img",
+            publicPath: ""
+        }
     }]
   },
   plugins: [
