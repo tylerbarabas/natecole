@@ -51,6 +51,7 @@
     "webpack-merge": "4.1.0"
   },
   "dependencies": {
-    "file-loader": "^2.0.0"
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5"
   }
 }

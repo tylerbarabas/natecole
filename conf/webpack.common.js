@@ -37,28 +37,35 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['env']
+            presets: ['env']
         }
       }
     },{
-        test: /\.scss$/,
-        use: extractSass.extract({
-            use: [{
-                loader: "css-loader",
-                options: {
-                    sourceMap: true
-                }
-            }, {
-                loader: "sass-loader",
-                options: {
-                    sourceMap: true
-                }
-            }],
-            // use style-loader in development
-            fallback: "style-loader"
-        })
-    },
-    { 
+      test: /\.(html)$/,
+      use: {
+        loader: 'html-loader',
+        options: {
+          attrs: [':data-src']
+        }
+      }
+    },{
+    test: /\.scss$/,
+    use: extractSass.extract({
+        use: [{
+            loader: "css-loader",
+            options: {
+                sourceMap: true
+            }
+        }, {
+            loader: "sass-loader",
+            options: {
+                sourceMap: true
+            }
+        }],
+        // use style-loader in development
+        fallback: "style-loader"
+      })
+    },{ 
         test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/, 
         loader: "file-loader",
         options: {
