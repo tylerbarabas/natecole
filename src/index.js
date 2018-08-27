@@ -7,7 +7,18 @@ import './index.scss';
 
 class ColeForge {
     constructor(){
-        console.log('ColeForge');
+        this.menuItems = document.getElementsByClassName('menu-item');
+
+        for (let i=0;i<this.menuItems.length;i+=1) {
+            let m = this.menuItems[i];
+            let key = m.getAttribute('data-value');
+
+            m.addEventListener('click',this.menuItemClicked.bind(this, key));
+        }
+    }
+
+    menuItemClicked(key){
+        console.log('menuItemClicked', key);
     }
 }
 
