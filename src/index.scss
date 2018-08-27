@@ -77,4 +77,22 @@ html, body {
 .main-content{
     width: 100%;
     height: calc(100% - 101px);
+    color: white;
+
+    .marquee{
+        height: 100%;
+        width: 100%;
+
+        .image-container{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 75px;
+            height: 75%;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
 }
