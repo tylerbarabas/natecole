@@ -23,6 +23,11 @@ html, body {
         color: #FFF;
         font-size: 45px;
 
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+
         li.menu-item {
             display: inline-block;
             list-style: none;
@@ -49,6 +54,11 @@ html, body {
             list-style: none;
             margin-left: 10px;
             margin-right: 10px;
+            
+            -webkit-user-select: none; /* Safari */        
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+/Edge */
+            user-select: none; /* Standard */
 
             img {
                 height: 50px;
