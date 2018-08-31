@@ -20,7 +20,7 @@ export default class Carousel {
             this.imageContainers[i].className = `image-container ${showing}`;
 
             let image = document.createElement('IMG');
-            image.src = this.images[i];
+            image.src = this.images[i].src;
 
             this.imageContainers[i].appendChild(image);
             this.container.appendChild(this.imageContainers[i]);

@@ -13,16 +13,22 @@ import './img/ico_pinterest.png';
 //Carousel and Gallery
 import Carousel from './carousel';
 
-import Demo1 from './img/demo1.png';
-import Demo2 from './img/demo2.png';
+//Import images
+import Staircase from './img/demo1.png';
+import HandForge from './img/demo2.png';
 
 import './index.scss';
 
 const Images = {
-    home: [
-        Demo1,
-        Demo2
-    ],
+    home: [{
+        src: Staircase,
+        caption: 'Some text here',
+        linkto: 'gallery'
+    },{
+        src: HandForge,
+        caption: 'Some other text here',
+        linkto: 'about-me'
+    }],
     gallery: []
 };
 
