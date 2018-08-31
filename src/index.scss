@@ -3,6 +3,7 @@ html, body {
     background-color: #000;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .topbar {
@@ -79,7 +80,7 @@ html, body {
     height: calc(100% - 101px);
     color: white;
 
-    .marquee{
+    .container{
         height: 100%;
         width: 100%;
 
@@ -88,11 +89,43 @@ html, body {
             left: 50%;
             transform: translateX(-50%);
             margin-top: 75px;
-            height: 75%;
+            width: 75%;
+            transition: all 500ms;
+
+            &.off-left {
+                left: -50%;
+            }
+
+            &.off-right{
+                left: 150%;
+            }
+
+            &.no-transition {
+                transition: none;
+            }
 
             img {
-                height: 100%;
+                width: 100%;
             }
+        }
+
+
+    }
+
+    .carousel-button{
+        position: absolute;
+        top: 50%;
+        color: #FFF;
+        font-size: 50px;
+        user-select: none;
+        cursor: pointer;
+
+        &.next-button{
+            right: 50px;
+        }
+
+        &.prev-button{
+            left: 50px;
         }
     }
 }
