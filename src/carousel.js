@@ -13,6 +13,12 @@ export default class Carousel {
         this.nextButton.addEventListener('click', this.shiftRight.bind(this));
         this.prevButton.addEventListener('click', this.shiftLeft.bind(this));
 
+        setTimeout(()=>{
+            this.init();
+        },0);
+    }
+
+    init(){
         for (let i=0;i<this.images.length;i++){
             this.imageContainers[i] = document.createElement('DIV');
             this.imageContainers[i].className = 'image-container off-left';
@@ -22,6 +28,8 @@ export default class Carousel {
 
             this.imageContainers[i].appendChild(image);
             this.container.appendChild(this.imageContainers[i]);
+
+            this.imageContainers[i].addEventListener('click', window.mainController.menuItemClicked.bind(window.mainController, this.images[i].linkto)); 
         }
 
         setTimeout(()=>{
@@ -48,6 +56,7 @@ export default class Carousel {
         let nextIndex = (this.currentIndex + 1 >= this.images.length) ? 0 : this.currentIndex + 1;
         this.removeOffClass(nextIndex, 'left');
         this.currentIndex = nextIndex;
+        this.resetInterval();
     }
 
     shiftRight(){
@@ -59,6 +68,7 @@ export default class Carousel {
 
         this.removeOffClass(nextIndex, 'right');
         this.currentIndex = nextIndex;
+        this.resetInterval();
     }
 
     removeOffClass(i, direction){
@@ -80,9 +90,12 @@ export default class Carousel {
         }, 5000);
     }
 
-    setOffClass(i, direction = 'left', transition = false){
-        let t = ' no-transition';
-        if (!transition) t = '';
-        this.imageContainers[i].className = `image-container off-${direction}${t}`;
+    resetInterval(){
+        clearInterval(this.interval);
+        this.autoRotate();
+    }
+
+    setOffClass(i, direction = 'left'){
+        this.imageContainers[i].className = `image-container off-${direction}`;
     }
 }

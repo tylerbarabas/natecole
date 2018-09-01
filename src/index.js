@@ -85,4 +85,4 @@ class ColeForge {
     }
 }
 
-new ColeForge();
+window.mainController = new ColeForge();
