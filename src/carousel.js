@@ -14,10 +14,8 @@ export default class Carousel {
         this.prevButton.addEventListener('click', this.shiftLeft.bind(this));
 
         for (let i=0;i<this.images.length;i++){
-            let showing = (i < 1) ? 'off-right':'off-left';
-
             this.imageContainers[i] = document.createElement('DIV');
-            this.imageContainers[i].className = `image-container ${showing}`;
+            this.imageContainers[i].className = 'image-container off-left';
 
             let image = document.createElement('IMG');
             image.src = this.images[i].src;
@@ -34,7 +32,7 @@ export default class Carousel {
     checkThrottle(){
         let now = Date.now();
         let diff = now - this.lastClick;
-        if (diff < 700) {
+        if (diff < 300) {
             return false;
         }
         this.lastClick = now;
@@ -47,11 +45,8 @@ export default class Carousel {
         this.setOffClass(this.currentIndex, 'left');
         
         let nextIndex = (this.currentIndex + 1 >= this.images.length) ? 0 : this.currentIndex + 1;
-        this.setOffClass(nextIndex, 'right', true);
-        setTimeout(()=>{
-            this.removeOffClass(nextIndex);
-            this.currentIndex = nextIndex;
-        },0);
+        this.removeOffClass(nextIndex, 'left');
+        this.currentIndex = nextIndex;
     }
 
     shiftRight(){
@@ -61,15 +56,21 @@ export default class Carousel {
         
         let nextIndex = (this.currentIndex - 1 < 0) ? this.images.length - 1 : this.currentIndex - 1;
 
-        this.setOffClass(nextIndex, 'left', true);
-        setTimeout(()=>{
-            this.removeOffClass(nextIndex);
-            this.currentIndex = nextIndex;
-        },0);
+        this.removeOffClass(nextIndex, 'right');
+        this.currentIndex = nextIndex;
     }
 
-    removeOffClass(i){
-        this.imageContainers[i].className = 'image-container';
+    removeOffClass(i, direction){
+        let oppositeOff = '';
+        let className = this.imageContainers[i].className;
+        if (className.indexOf(direction) !== -1) {
+            if (className.indexOf('right') !== -1) oppositeOff = ' off-left no-transition';
+            else if (className.indexOf('left') !== -1) oppositeOff = ' off-right no-transition';
+            this.imageContainers[i].className = `image-container ${oppositeOff}`;
+        }
+        setTimeout(()=>{
+            this.imageContainers[i].className = 'image-container';
+        },100);
     }
 
     setOffClass(i, direction = 'left', transition = false){
