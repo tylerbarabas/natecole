@@ -23,10 +23,15 @@ export default class Carousel {
             this.imageContainers[i] = document.createElement('DIV');
             this.imageContainers[i].className = 'image-container off-left';
 
+            let caption = document.createElement('DIV');
+            caption.className = 'caption';
+            caption.innerText = this.images[i].caption;
+
             let image = document.createElement('IMG');
             image.src = this.images[i].src;
 
             this.imageContainers[i].appendChild(image);
+            this.imageContainers[i].appendChild(caption);
             this.container.appendChild(this.imageContainers[i]);
 
             this.imageContainers[i].addEventListener('click', window.mainController.menuItemClicked.bind(window.mainController, this.images[i].linkto)); 

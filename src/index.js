@@ -19,14 +19,17 @@ import HandForge from './img/demo2.png';
 
 import './index.scss';
 
+/*
+* linkto can be 'home', 'gallery', 'about-me', 'contact', or null (without quotes)
+*/
 const Images = {
     home: [{
         src: Staircase,
-        caption: 'Some text here',
+        caption: 'Mah staircase.',
         linkto: 'gallery'
     },{
         src: HandForge,
-        caption: 'Some other text here',
+        caption: 'Mah hammerss.',
         linkto: 'about-me'
     }],
     gallery: []
@@ -52,6 +55,8 @@ class ColeForge {
     }
 
     menuItemClicked(key){
+        if (!key) return;
+
         for (let i=0;i<this.menuItems.length;i+=1) {
             let m = this.menuItems[i];
             let k = m.getAttribute('data-value');

@@ -107,6 +107,16 @@ html, body {
             img {
                 width: 100%;
             }
+
+            div.caption{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                background-color: rgba(0,0,0,0.5);
+                padding: 10px;
+                border-radius: 10px;
+            }
         }
 
 
