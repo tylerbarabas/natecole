@@ -26,6 +26,7 @@ export default class Carousel {
 
         setTimeout(()=>{
             this.removeOffClass(this.currentIndex);
+            this.autoRotate();
         },0);
     }
 
@@ -71,6 +72,12 @@ export default class Carousel {
         setTimeout(()=>{
             this.imageContainers[i].className = 'image-container';
         },100);
+    }
+
+    autoRotate(){
+        this.interval = setInterval(()=>{
+            this.shiftRight();
+        }, 5000);
     }
 
     setOffClass(i, direction = 'left', transition = false){
