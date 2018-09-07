@@ -78,7 +78,7 @@ html, body {
 
 .main-content{
     width: 100%;
-    height: calc(100% - 151px);
+    height: calc(100% - 201px);
     color: white;
 
     .container{
@@ -130,6 +130,7 @@ html, body {
         height: 100%;
         width: 100%;
         text-align: center;
+        padding-top: 50px;
 
         .image-container{
             width: 30%;
