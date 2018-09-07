@@ -148,7 +148,7 @@ html, body {
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: rgba(0,0,0,0.7);
+        background-color: rgba(0,0,0,0.8);
         opacity: 0;
         transition: opacity 500ms;
         display: none;
@@ -158,10 +158,11 @@ html, body {
             position: absolute;
             top: 15px;
             right: 15px;
-            height: 30px;
-            width: 30px;
-            background-color: #FFF;
+            height: 50px;
+            width: 50px;
             cursor: pointer;
+            background-image: url(./img/x.png);
+            background-size: 100% 100%;
         }
 
         .preview-image{
@@ -176,34 +177,42 @@ html, body {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: #FFF;
             height: 50px;
             width: 50px;
+            background-size: 100%;
+            cursor: pointer;
 
             &.right{
-                right: 50px;
+                right: 20px;
+                background-image: url(./img/arrow-right.png);
             }
 
             &.left{
-                left: 50px;
+                left: 20px;
+                background-image: url(./img/arrow-left.png);
             }
         }
     } 
 
     .carousel-button{
         position: absolute;
-        top: 50%;
+        top: calc(50% + 51px);
+        transform: translateY(-50%);
         color: #FFF;
-        font-size: 50px;
         user-select: none;
         cursor: pointer;
+        height: 50px;
+        width: 50px;
+        background-size: 100%;
 
         &.next-button{
             right: 50px;
+            background-image: url(./img/arrow-right.png);
         }
 
         &.prev-button{
             left: 50px;
+            background-image: url(./img/arrow-left.png);
         }
     }
 }

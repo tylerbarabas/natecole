@@ -10,6 +10,11 @@ import './img/ico_twitter.png';
 import './img/ico_instagram.png';
 import './img/ico_pinterest.png';
 
+//Icons
+import './img/arrow-left.png';
+import './img/arrow-right.png';
+import './img/x.png';
+
 //Carousel and Gallery
 import JSCarousel from './carousel';
 import JSGallery from './gallery';
