@@ -31,6 +31,12 @@ export default class Gallery {
 
             if (i % 2 === 1) this.container.appendChild(document.createElement('BR'));
         }
+
+        this.arrowLeft = document.getElementById('arrow-left');
+        this.arrowLeft.addEventListener('click',this.arrowClicked.bind(this,'left'));
+
+        this.arrowRight = document.getElementById('arrow-right');
+        this.arrowRight.addEventListener('click',this.arrowClicked.bind(this,'right'));
     }
 
     openPreview(e,i=null){
@@ -62,5 +68,19 @@ export default class Gallery {
             images[i].parentNode.removeChild(images[i]);
         }
         this.previewImage = null;
+    }
+
+    arrowClicked(direction){
+        if (direction === 'right'){
+            this.currentIndex += 1;
+        } else {
+            this.currentIndex -= 1;
+        }
+
+        if (this.currentIndex >= this.images.length) this.currentIndex = 0;
+        else if (this.currentIndex < 0) this.currentIndex = this.images.length - 1;
+
+        let i = this.currentIndex;
+        this.previewImage.src = this.images[i].src;
     }
 }

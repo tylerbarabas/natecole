@@ -168,7 +168,24 @@ html, body {
             transform: translateY(-50%) translateX(-50%);
             width: 90%;
         }
-   } 
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #FFF;
+            height: 50px;
+            width: 50px;
+
+            &.right{
+                right: 50px;
+            }
+
+            &.left{
+                left: 50px;
+            }
+        }
+    } 
 
     .carousel-button{
         position: absolute;
