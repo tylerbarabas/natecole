@@ -10,6 +10,7 @@ export default class Gallery {
 
         this.xIcon = document.getElementById('x-close-preview');
         this.xIcon.addEventListener('click', this.closePreview.bind(this));
+        this.previewContainer.addEventListener('click', this.closePreview.bind(this));
 
         for (let i=0;i<this.images.length;i+=1){
             let image = this.images[i];
@@ -54,7 +55,10 @@ export default class Gallery {
         }, 50);
     }
 
-    closePreview(){
+    closePreview(e){
+        if (e.target.className === 'preview-image'
+            || e.target.className.indexOf('arrow') !== -1) return;
+
         this.previewContainer.style.opacity = 0; 
         setTimeout(()=>{
             this.clearPreview();
