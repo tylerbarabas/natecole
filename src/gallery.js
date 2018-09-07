@@ -37,6 +37,7 @@ export default class Gallery {
     }
 
     closePreview(){
-        console.log('closePreview');
+        this.previewContainer.style.display = 'none';
+        this.previewContainer.style.opacity = 0; 
     }
 }
