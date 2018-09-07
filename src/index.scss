@@ -148,6 +148,8 @@ html, body {
         background-color: rgba(0,0,0,0.7);
         opacity: 0;
         transition: opacity 500ms;
+        display: none;
+        user-select: none;
 
         .x-close {
             position: absolute;
@@ -157,6 +159,14 @@ html, body {
             width: 30px;
             background-color: #FFF;
             cursor: pointer;
+        }
+
+        .preview-image{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            width: 90%;
         }
    } 
 

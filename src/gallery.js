@@ -6,6 +6,7 @@ export default class Gallery {
         this.isPreview = false;
         this.previewContainer = document.getElementById('preview-container');
         this.previewContainer.style.display = 'none';
+        this.previewImage = null;
 
         this.xIcon = document.getElementById('x-close-preview');
         this.xIcon.addEventListener('click', this.closePreview.bind(this));
@@ -19,6 +20,7 @@ export default class Gallery {
             let domImg = document.createElement('IMG');
             domImg.src = image.src;
             domImg.setAttribute('data-index', i);
+            domImg.className = 'preview-img';
 
             ic.appendChild(domImg);
 
@@ -31,13 +33,34 @@ export default class Gallery {
         }
     }
 
-    openPreview(){
+    openPreview(e,i=null){
+        this.currentIndex = i = i || e.target.getAttribute('data-index');
+
+        this.previewImage = document.createElement('IMG');
+        this.previewImage.src = this.images[i].src;
+        this.previewImage.className = 'preview-image';
+
+        this.previewContainer.appendChild(this.previewImage);
         this.previewContainer.style.display = 'block';
-        this.previewContainer.style.opacity = 1; 
+
+        setTimeout(()=>{
+            this.previewContainer.style.opacity = 1;
+        }, 50);
     }
 
     closePreview(){
-        this.previewContainer.style.display = 'none';
         this.previewContainer.style.opacity = 0; 
+        setTimeout(()=>{
+            this.clearPreview();
+            this.previewContainer.style.display = null; //defaults to none
+        },500);
+    }
+
+    clearPreview(){
+        let images = this.previewContainer.getElementsByTagName('IMG');
+        for (let i=0;i<images.length;i+=1){
+            images[i].parentNode.removeChild(images[i]);
+        }
+        this.previewImage = null;
     }
 }
