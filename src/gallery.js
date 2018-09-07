@@ -7,6 +7,9 @@ export default class Gallery {
         this.previewContainer = document.getElementById('preview-container');
         this.previewContainer.style.display = 'none';
 
+        this.xIcon = document.getElementById('x-close-preview');
+        this.xIcon.addEventListener('click', this.closePreview.bind(this));
+
         for (let i=0;i<this.images.length;i+=1){
             let image = this.images[i];
             
@@ -31,5 +34,9 @@ export default class Gallery {
     openPreview(){
         this.previewContainer.style.display = 'block';
         this.previewContainer.style.opacity = 1; 
+    }
+
+    closePreview(){
+        console.log('closePreview');
     }
 }
