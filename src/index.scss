@@ -77,8 +77,12 @@ html, body {
 
 .main-content{
     width: 100%;
-    height: calc(100% - 101px);
+    height: calc(100% - 151px);
     color: white;
+
+    .container{
+        margin-top: 50px;
+    }
 
     .container#home{
         height: 100%;
@@ -125,7 +129,6 @@ html, body {
         height: 100%;
         width: 100%;
         text-align: center;
-        margin-top: 50px;
 
         .image-container{
             width: 30%;
