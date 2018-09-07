@@ -11,7 +11,8 @@ import './img/ico_instagram.png';
 import './img/ico_pinterest.png';
 
 //Carousel and Gallery
-import Carousel from './carousel';
+import JSCarousel from './carousel';
+import JSGallery from './gallery';
 
 //Import images
 import Staircase from './img/demo1.png';
@@ -20,7 +21,8 @@ import HandForge from './img/demo2.png';
 import './index.scss';
 
 /*
-* linkto can be 'home', 'gallery', 'about-me', 'contact', or null (without quotes)
+* linkto can be 'home', 'gallery',
+* 'about-me', 'contact', or null (without quotes)
 */
 const Images = {
     home: [{
@@ -32,7 +34,20 @@ const Images = {
         caption: 'Mah hammerss.',
         linkto: 'about-me'
     }],
-    gallery: []
+    gallery: [{
+        src: Staircase,
+        caption: ''
+    },{
+        src: HandForge,
+        caption: ''
+    },{
+        src: Staircase,
+        caption: ''
+    },{
+        src: HandForge,
+        caption: ''
+    }
+]
 };
 
 class ColeForge {
@@ -74,6 +89,7 @@ class ColeForge {
         switch(key){
             case 'gallery':
                 this.mainContent.innerHTML = Gallery;
+                this.gallery = new JSGallery(Images.gallery);
                 break;
             case 'about-me':
                 this.mainContent.innerHTML = AboutMe;
@@ -84,7 +100,7 @@ class ColeForge {
             case 'home':
             default:
                 this.mainContent.innerHTML = Home;
-                this.carousel = new Carousel(Images.home);
+                this.carousel = new JSCarousel(Images.home);
                 break;
         }
     }

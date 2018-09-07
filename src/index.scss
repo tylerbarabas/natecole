@@ -80,7 +80,7 @@ html, body {
     height: calc(100% - 101px);
     color: white;
 
-    .container{
+    .container#home{
         height: 100%;
         width: 100%;
 
@@ -91,6 +91,7 @@ html, body {
             margin-top: 50px;
             width: 89%;
             transition: all 500ms;
+            cursor: pointer;
 
             &.off-left {
                 left: -50%;
@@ -118,8 +119,35 @@ html, body {
                 border-radius: 10px;
             }
         }
+    }
 
+    .container#gallery{
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
 
+        .image-container{
+            width: 30%;
+            display: inline-block;
+            margin-bottom: 40px;
+            cursor: pointer;
+
+            img{
+                width: 100%;
+            }
+        }
+    }
+
+    .preview-container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.7);
+        opacity: 0;
+        transition: opacity 500ms;
     }
 
     .carousel-button{
