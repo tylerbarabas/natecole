@@ -5,6 +5,7 @@ import Contact from './contact.html';
 
 //Top bar images
 import './img/logo_white.png';
+import './img/logo_small_white.png';
 import './img/ico_facebook.png';
 import './img/ico_twitter.png';
 import './img/ico_instagram.png';
