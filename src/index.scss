@@ -24,6 +24,15 @@ html, body {
         cursor: pointer;
     }
 
+    .hamburger{
+        height: 50px;
+        width: 50px;
+        float: left;
+        margin-top: 55px;
+        margin-left: 30px;
+        cursor: pointer;
+    }
+
     .menu {
         padding-top: 30px;
         padding-right: 50px;
@@ -304,7 +313,7 @@ html, body {
         .logo-small {
             height: 150px;
             display: inline-block;
-            margin-left: 30px;
+            margin-left: -10px;
             margin-top: 10px;
         }
 

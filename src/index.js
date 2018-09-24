@@ -15,6 +15,7 @@ import './img/ico_pinterest.png';
 import './img/arrow-left.png';
 import './img/arrow-right.png';
 import './img/x.png';
+import './img/hamburger.png';
 
 //Carousel and Gallery
 import JSCarousel from './carousel';
