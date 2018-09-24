@@ -1,5 +1,7 @@
 html, body {
+    position: fixed;
     height: 100%;
+    width: 100%;
     background-color: #000;
     margin: 0;
     padding: 0;
@@ -101,6 +103,7 @@ html, body {
             width: 89%;
             transition: all 500ms;
             cursor: pointer;
+            text-align: center;
 
             &.off-left {
                 left: -50%;
@@ -368,13 +371,18 @@ html, body {
         .container#home{
             .image-container {
                 margin-top: 0;
-                top: 50%;
+                top: calc(50% + 50px);
                 transform: translateX(-50%) translateY(-50%);
+
+		img {
+
+			width: 65%;
+		}
             }
         }
 
         .carousel-button{
-            top: 50%;
+            top: calc(50% + 50px);
             height: 30px;
             width: 30px;
         }
@@ -417,8 +425,10 @@ html, body {
         .container#home{
             .image-container {
                 margin-top: 0;
-                top: 50%;
+                top: calc(50% + 1px);
                 transform: translateX(-50%) translateY(-50%);
+
+
             }
         }
 

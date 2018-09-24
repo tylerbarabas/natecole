@@ -65,6 +65,9 @@ class ColeForge {
         this.mainContent = document.getElementById('main-content');
         this.menuItems = document.getElementsByClassName('menu-item');
 
+	document.getElementById('logo').addEventListener('click', this.loadContent.bind(this, 'home'));
+	document.getElementById('logo-small').addEventListener('click', this.loadContent.bind(this, 'home'));
+
         for (let i=0;i<this.menuItems.length;i+=1) {
             let m = this.menuItems[i];
             let key = m.getAttribute('data-value');
