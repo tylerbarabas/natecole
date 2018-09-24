@@ -140,7 +140,7 @@ html, body {
         padding-top: 50px;
 
         .image-container{
-            width: 30%;
+            width: 40%;
             display: inline-block;
             margin-bottom: 40px;
             cursor: pointer;
@@ -172,6 +172,7 @@ html, body {
             cursor: pointer;
             background-image: url(./img/x.png);
             background-size: 100% 100%;
+            z-index: 9999;
         }
 
         .preview-image{
@@ -190,6 +191,7 @@ html, body {
             width: 50px;
             background-size: 100%;
             cursor: pointer;
+            z-index: 9999;
 
             &.right{
                 right: 20px;
@@ -386,6 +388,12 @@ html, body {
             height: 30px;
             width: 30px;
         }
+
+	.preview-container{
+		.preview-image{
+			width: 80%;
+		}
+	}
     }
 }
 
@@ -436,6 +444,25 @@ html, body {
             top: 50%;
             height: 30px;
             width: 30px;
+
+            &.next-button{
+                right: 20px;
+            }
+
+            &.prev-button{
+                left: 20px;
+            }
         }
+
+	.preview-container{
+		.preview-image{
+			width: 80%;
+		}
+
+		.arrow, .x-close{
+			height: 35px;
+			width: 35px;
+		}
+	}
     }
 }
