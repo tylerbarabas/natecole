@@ -69,7 +69,9 @@ export default class Gallery {
     clearPreview(){
         let images = this.previewContainer.getElementsByTagName('IMG');
         for (let i=0;i<images.length;i+=1){
-            images[i].parentNode.removeChild(images[i]);
+            if (images[i].className.indexOf('arrow') === -1
+                && images[i].className.indexOf('x-close') === -1)
+                images[i].parentNode.removeChild(images[i]);
         }
         this.previewImage = null;
     }

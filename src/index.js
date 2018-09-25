@@ -65,9 +65,12 @@ class ColeForge {
         this.selectedPage = 'home';
         this.mainContent = document.getElementById('main-content');
         this.menuItems = document.getElementsByClassName('menu-item');
+        this.sidebar = document.getElementById('sidebar');
 
-	document.getElementById('logo').addEventListener('click', this.loadContent.bind(this, 'home'));
-	document.getElementById('logo-small').addEventListener('click', this.loadContent.bind(this, 'home'));
+        document.getElementById('x-close-sidebar').addEventListener('click', this.toggleSidebar.bind(this));
+        document.getElementById('hamburger').addEventListener('click', this.toggleSidebar.bind(this));
+        document.getElementById('logo').addEventListener('click', this.loadContent.bind(this, 'home'));
+        document.getElementById('logo-small').addEventListener('click', this.loadContent.bind(this, 'home'));
 
         for (let i=0;i<this.menuItems.length;i+=1) {
             let m = this.menuItems[i];
@@ -93,6 +96,14 @@ class ColeForge {
         }
 
         this.loadContent(key);
+        if (this.sidebar.className.indexOf('show') !== -1) this.toggleSidebar();
+    }
+
+    toggleSidebar() {
+        if (this.sidebar.className.indexOf('show') === -1)
+            this.sidebar.className += ' show';
+        else
+            this.sidebar.className = this.sidebar.className.split(' show')[0];
     }
 
     loadContent(key){
