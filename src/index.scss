@@ -413,6 +413,8 @@ div.x-close {
 @media all and (min-width: 480px) and (max-width: 767px){
     .sidebar {
         display: block;
+        width: 30%;
+        font-size: 20px;
     }
 
     .topbar {
@@ -484,6 +486,8 @@ div.x-close {
 @media all and (max-width: 479px){
     .sidebar {
         display: block;
+        width: 30%;
+        font-size: 20px;
     }
 
     .topbar {
