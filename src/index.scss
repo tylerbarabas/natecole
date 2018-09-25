@@ -464,11 +464,14 @@ div.x-close {
                 top: calc(50% + 50px);
                 transform: translateX(-50%) translateY(-50%);
 
-		img {
-
-			width: 65%;
-		}
+                img {
+                    width: 65%;
+                }
             }
+        }  
+  
+        .container#gallery {
+            padding-top: 10px;
         }
 
         .carousel-button{
@@ -477,11 +480,11 @@ div.x-close {
             width: 30px;
         }
 
-	.preview-container{
-		.preview-image{
-			width: 80%;
-		}
-	}
+        .preview-container{
+            .preview-image{
+                width: 80%;
+            }
+        }
     }
 }
 
@@ -547,6 +550,10 @@ div.x-close {
 
 
             }
+        }
+
+        .container#gallery {
+            padding-top: 10px;
         }
 
         .carousel-button{
