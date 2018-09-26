@@ -16,6 +16,10 @@ export default class Carousel {
         setTimeout(()=>{
             this.init();
         },0);
+
+        window.addEventListener('load', ()=>{
+            this.sizeAndPosition();
+        });
     }
 
     init(){
@@ -40,7 +44,6 @@ export default class Carousel {
         setTimeout(()=>{
             this.removeOffClass(this.currentIndex);
             this.autoRotate();
-            this.sizeAndPosition();
         },50);
 
         window.addEventListener('resize', ()=>{
