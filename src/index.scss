@@ -155,21 +155,40 @@ div.x-close {
     height: calc(100% - 201px);
     color: white;
 
-    .container{
-        margin-top: 50px;
-    }
 
     .container#home{
-        height: 100%;
         width: 100%;
+
+        .carousel-button{
+            position: absolute;
+            color: #FFF;
+            user-select: none;
+            cursor: pointer;
+            height: 50px;
+            width: 50px;
+            background-size: 100%;
+            z-index: 1;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+
+            &.next-button{
+                right: 50px;
+            }
+
+            &.prev-button{
+                left: 50px;
+            }
+        }
 
         .image-container{
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             margin-top: 50px;
-            width: 89%;
-            transition: all 500ms;
+            transition: left 500ms;
             cursor: pointer;
             text-align: center;
 
@@ -265,30 +284,6 @@ div.x-close {
         }
     } 
 
-    .carousel-button{
-        position: absolute;
-        top: calc(50% + 51px);
-        transform: translateY(-50%);
-        color: #FFF;
-        user-select: none;
-        cursor: pointer;
-        height: 50px;
-        width: 50px;
-        background-size: 100%;
-
-        img {
-            height: 100%;
-            width: 100%;
-        }
-
-        &.next-button{
-            right: 50px;
-        }
-
-        &.prev-button{
-            left: 50px;
-        }
-    }
 }
 
 @media all and (min-width: 1200px) and (max-width: 1600px) {
@@ -343,15 +338,16 @@ div.x-close {
         .container#home{
             .image-container {
                 margin-top: 0;
-                top: 50%;
-                transform: translateX(-50%) translateY(-50%);
+            }
+
+            .carousel-button{
+                height: 50px;
+                width: 50px;
             }
         }
 
-        .carousel-button{
-            top: 50%;
-            height: 50px;
-            width: 50px;
+        .container{
+            margin-top: 25px;
         }
     }
 }
@@ -362,7 +358,6 @@ div.x-close {
     }
 
     .topbar {
-
         .logo{
             height: 150px;
             margin-top: 10px;
@@ -391,9 +386,12 @@ div.x-close {
     .main-content{
         .container#home{
             .image-container {
-                margin-top: 0;
-                top: 50%;
-                transform: translateX(-50%) translateY(-50%);
+                margin-top: 30px;
+            }
+
+            .carousel-button{
+                height: 40px;
+                width: 40px;
             }
         }
 
@@ -401,11 +399,6 @@ div.x-close {
                 width: 48%;
         }
 
-        .carousel-button{
-            top: 50%;
-            height: 40px;
-            width: 40px;
-        }
     }
 
 }
@@ -431,14 +424,7 @@ div.x-close {
             margin-top: 20px;
             margin-left: 10px;
         }
-/*
-        .logo-small {
-            height: 100px;
-            display: inline-block;
-            margin-left: -10px;
-            margin-top: 10px;
-        }
-*/
+
         .menu {
             display: none;
         }
@@ -464,27 +450,24 @@ div.x-close {
         .container#home{
             .image-container {
                 margin-top: 0;
-                top: calc(50% + 50px);
-                transform: translateX(-50%) translateY(-50%);
+            }
 
-                img {
-                    width: 65%;
-                }
+            .carousel-button{
+                height: 30px;
+                width: 30px;
             }
         }  
-  
+ 
+        .container{
+            margin-top: 0px;
+        }
+ 
         .container#gallery {
             padding-top: 10px;
 
             .image-container {
                 width: 48%;
             }
-        }
-
-        .carousel-button{
-            top: calc(50% + 50px);
-            height: 30px;
-            width: 30px;
         }
 
         .preview-container{
@@ -504,7 +487,6 @@ div.x-close {
     }
 
     .topbar {
-
         .logo{
             display: none;
         }
@@ -525,8 +507,8 @@ div.x-close {
             padding-right: 0;
 
             li {
-		margin-left: 5px;
-		margin-right: 5px;
+	    	    margin-left: 5px;
+		        margin-right: 5px;
 
                 img {
                     height: 37px;
@@ -553,11 +535,24 @@ div.x-close {
         .container#home{
             .image-container {
                 margin-top: 0;
-                top: calc(50% + 1px);
-                transform: translateX(-50%) translateY(-50%);
-
-
             }
+
+            .carousel-button{
+                height: 30px;
+                width: 30px;
+
+                &.next-button{
+                    right: 20px;
+                }
+
+                &.prev-button{
+                    left: 20px;
+                }
+            }
+        }
+
+        .container{
+            margin-top: 0px;
         }
 
         .container#gallery {
@@ -568,19 +563,6 @@ div.x-close {
             }
         }
 
-        .carousel-button{
-            top: 50%;
-            height: 30px;
-            width: 30px;
-
-            &.next-button{
-                right: 20px;
-            }
-
-            &.prev-button{
-                left: 20px;
-            }
-        }
 
         .preview-container{
             cursor: pointer;

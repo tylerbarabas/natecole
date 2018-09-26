@@ -40,7 +40,41 @@ export default class Carousel {
         setTimeout(()=>{
             this.removeOffClass(this.currentIndex);
             this.autoRotate();
-        },0);
+            this.sizeAndPosition();
+        },50);
+
+        window.addEventListener('resize', ()=>{
+            setTimeout(()=>{
+                this.sizeAndPosition();
+            },50);
+        });
+    }
+
+    getAbsoluteHeight(elm) {
+        let elmHeight, elmMargin;
+        if(document.all) {// IE
+            elmHeight = elm.currentStyle.height;
+            elmMargin = parseInt(elm.currentStyle.marginTop, 10) + parseInt(elm.currentStyle.marginBottom, 10) + "px";
+        } else {// Mozilla
+            elmHeight = document.defaultView.getComputedStyle(elm, '').getPropertyValue('height');
+            elmMargin = parseInt(document.defaultView.getComputedStyle(elm, '').getPropertyValue('margin-top')) + parseInt(document.defaultView.getComputedStyle(elm, '').getPropertyValue('margin-bottom')) + "px";
+        }
+        elmHeight = parseInt(elmHeight.split('px')[0]);
+        elmMargin = parseInt(elmMargin.split('px')[0]);
+        return (elmHeight+elmMargin);
+    }
+
+    sizeAndPosition(){
+        let ic;
+        for (let i=0;i<this.imageContainers.length;i+=1) {
+            ic = this.imageContainers[i];
+            ic.style.width = `${window.innerWidth * 0.8}px`;
+        }
+        console.log(this.getAbsoluteHeight(ic));
+
+        let height = ((this.getAbsoluteHeight(ic)/2) + 100) - (this.getAbsoluteHeight(this.nextButton)/2);
+        this.nextButton.style.top = `${height}px`;
+        this.prevButton.style.top = `${height}px`;
     }
 
     checkThrottle(){
