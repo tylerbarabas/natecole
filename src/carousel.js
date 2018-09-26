@@ -17,6 +17,7 @@ export default class Carousel {
             this.init();
         },0);
 
+
         window.addEventListener('load', ()=>{
             this.sizeAndPosition();
         });
@@ -44,6 +45,7 @@ export default class Carousel {
         setTimeout(()=>{
             this.removeOffClass(this.currentIndex);
             this.autoRotate();
+            this.sizeAndPosition();
         },50);
 
         window.addEventListener('resize', ()=>{
@@ -73,7 +75,6 @@ export default class Carousel {
             ic = this.imageContainers[i];
             ic.style.width = `${window.innerWidth * 0.8}px`;
         }
-        console.log(this.getAbsoluteHeight(ic));
 
         let height = ((this.getAbsoluteHeight(ic)/2) + 100) - (this.getAbsoluteHeight(this.nextButton)/2);
         this.nextButton.style.top = `${height}px`;

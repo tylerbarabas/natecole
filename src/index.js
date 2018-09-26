@@ -69,8 +69,8 @@ class ColeForge {
 
         document.getElementById('x-close-sidebar').addEventListener('click', this.toggleSidebar.bind(this));
         document.getElementById('hamburger').addEventListener('click', this.toggleSidebar.bind(this));
-        document.getElementById('logo').addEventListener('click', this.loadContent.bind(this, 'home'));
-        document.getElementById('logo-small').addEventListener('click', this.loadContent.bind(this, 'home'));
+        document.getElementById('logo').addEventListener('click', this.menuItemClicked.bind(this, 'home'));
+        document.getElementById('logo-small').addEventListener('click', this.menuItemClicked.bind(this, 'home'));
 
         for (let i=0;i<this.menuItems.length;i+=1) {
             let m = this.menuItems[i];

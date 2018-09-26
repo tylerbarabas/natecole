@@ -18,7 +18,7 @@ html, body {
     height: calc(100% - 50px);
     width: calc(20% - 30px); 
     background-color: #111;
-    font-size: 30px;
+    font-size: 25px;
     color: #FFF;
     padding-top: 50px;
 
@@ -50,6 +50,9 @@ html, body {
 .topbar {
     height: 100px;
     width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: #000;
 
     .logo {
         margin-top:-40px;
@@ -154,7 +157,7 @@ div.x-close {
     width: 100%;
     height: calc(100% - 201px);
     color: white;
-
+    margin-top: 100px;
 
     .container#home{
         width: 100%;
@@ -249,7 +252,7 @@ div.x-close {
         transition: opacity 500ms;
         display: none;
         user-select: none;
-
+	z-index: 9999;
 
         .preview-image{
             position: absolute;
